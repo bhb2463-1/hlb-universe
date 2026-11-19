@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "source": "https://mysterious-bait-6ee.notion.site/HLB-HLB-Group-18fdd42135be809fbf3cc031182c8ff2",
-  "checkedAt": "2026-11-10T02:10:48.770Z",
-  "contentHash": "51acfb80ebeed1ef8b8dad1761d57dca044a2404fa7a21dfa044e5922c27afdd",
-  "blockCount": 591,
+  "checkedAt": "2026-11-19T02:04:54.098Z",
+  "contentHash": "642f2aad6181f4b4836dd4c47e8c995903af0d30ca1afad13ded81fa4e695503",
+  "blockCount": 600,
   "resources": [
     {
       "id": "vision",
@@ -408,6 +408,90 @@
         }
       },
       "contentHash": "569494ad6e1a1418b383daf01272f66d9fd55c42aff355e2b4feebe06e2232d3"
+    },
+    {
+      "id": "notion-41ddd42135be80b4a90ad6ae1f04ec82",
+      "space": "group",
+      "title": "HLB 유니버스 (HLB Universe, InfoBank)",
+      "company": "HLB그룹",
+      "type": "그룹 안내",
+      "language": "국문",
+      "description": "HLB 유니버스 (HLB Universe, InfoBank)의 공개 자료를 체험관에서 확인합니다.",
+      "keywords": [
+        "HLB 유니버스 (HLB Universe, InfoBank)",
+        "HLB그룹 온라인 공간"
+      ],
+      "url": "https://mysterious-bait-6ee.notion.site/41ddd42135be80b4a90ad6ae1f04ec82",
+      "notionPageId": "41ddd421-35be-80b4-a90a-d6ae1f04ec82",
+      "reading": {
+        "source": "https://mysterious-bait-6ee.notion.site/41ddd42135be80b4a90ad6ae1f04ec82",
+        "summary": "HLB 유니버스 (HLB Universe, InfoBank)의 공개 자료를 체험관에서 확인합니다.",
+        "sections": [
+          {
+            "heading": "관련 링크",
+            "items": [
+              "https://hlbbusisup-creator.github.io/hlb-universe/"
+            ]
+          }
+        ]
+      },
+      "contentHash": "9010cb577d2b436113729765efbba961fd4bffdd7ab55a6116c7b2a3c03ddfeb"
+    },
+    {
+      "id": "notion-41ddd42135be80eabf83c0ba80517b5b",
+      "space": "product",
+      "title": "HLB 브랜드 가든 (HLB Brand Garden, B2C Brand&Products)",
+      "company": "HLB그룹",
+      "type": "제품 카탈로그",
+      "language": "국문",
+      "description": "HLB 브랜드 가든 (HLB Brand Garden, B2C Brand&Products)의 공개 자료를 체험관에서 확인합니다.",
+      "keywords": [
+        "HLB 브랜드 가든 (HLB Brand Garden, B2C Brand&Products)",
+        "HLB그룹 온라인 공간"
+      ],
+      "url": "https://mysterious-bait-6ee.notion.site/41ddd42135be80eabf83c0ba80517b5b",
+      "notionPageId": "41ddd421-35be-80ea-bf83-c0ba80517b5b",
+      "reading": {
+        "source": "https://mysterious-bait-6ee.notion.site/41ddd42135be80eabf83c0ba80517b5b",
+        "summary": "HLB 브랜드 가든 (HLB Brand Garden, B2C Brand&Products)의 공개 자료를 체험관에서 확인합니다.",
+        "sections": [
+          {
+            "heading": "관련 링크",
+            "items": [
+              "https://hlb-campus.bloomingtick2.chatgpt.site/"
+            ]
+          }
+        ]
+      },
+      "contentHash": "bd8f10e0efdf94f8af5e29b45bdea659b81bd342f1d660be611fe745b7d6562f"
+    },
+    {
+      "id": "notion-41ddd42135be80c68f3dc2048ac7382d",
+      "space": "group",
+      "title": "더 리버 (The River)",
+      "company": "HLB그룹",
+      "type": "그룹 안내",
+      "language": "국문",
+      "description": "더 리버 (The River)의 공개 자료를 체험관에서 확인합니다.",
+      "keywords": [
+        "더 리버 (The River)",
+        "HLB그룹 온라인 공간"
+      ],
+      "url": "https://mysterious-bait-6ee.notion.site/41ddd42135be80c68f3dc2048ac7382d",
+      "notionPageId": "41ddd421-35be-80c6-8f3d-c2048ac7382d",
+      "reading": {
+        "source": "https://mysterious-bait-6ee.notion.site/41ddd42135be80c68f3dc2048ac7382d",
+        "summary": "더 리버 (The River)의 공개 자료를 체험관에서 확인합니다.",
+        "sections": [
+          {
+            "heading": "관련 링크",
+            "items": [
+              "https://the-river-moments.brawnyswan21.chatgpt.site/"
+            ]
+          }
+        ]
+      },
+      "contentHash": "d5bc428fe75ef16dd1e6d409b3823a5160f96ae8c39a958faeea2f3bd26a8815"
     },
     {
       "id": "social",
