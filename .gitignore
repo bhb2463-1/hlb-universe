@@ -1,4 +1,5 @@
 node_modules/
+/hlb-lifestyle/
 /dist/
 .env
 .env.*

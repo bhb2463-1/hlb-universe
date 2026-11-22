@@ -59,8 +59,8 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "bhb2463-1"
+          git config user.email "306971001+bhb2463-1@users.noreply.github.com"
           git add -- assets/reading/notion/
           git commit -m "Sync public Notion InfoBank"
       - id: revision

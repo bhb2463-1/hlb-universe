@@ -123,6 +123,8 @@ npm test
 
 ## GitHub Pages로 공개하기
 
+개발·커밋·푸시는 `bhb2463-1` 계정을 사용합니다. 기존 접속 주소 `https://hlbbusisup-creator.github.io/hlb-universe/`도 유지하며, 옛 계정의 사용자 사이트에 있는 연결 페이지가 새 계정의 최신 유니버스를 전체 화면으로 표시합니다. 실제 앱을 두 벌로 관리하지 않으므로 이후 변경은 아래의 새 저장소 한 곳에 반영하면 됩니다. `?visit=cafe` 같은 진입 옵션도 두 주소에서 사용할 수 있습니다.
+
 1. 프로젝트를 GitHub의 `bhb2463-1/hlb-universe` 저장소의 `main` 브랜치에 올립니다. GitHub Free에서는 공개 저장소를 사용하며, 저장소에 커밋한 소스와 파일도 누구나 볼 수 있습니다.
 2. GitHub 저장소의 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택합니다.
 3. **Actions → Deploy HLB Universe to GitHub Pages → Run workflow**에서 `main`을 선택해 실행합니다. `build`와 `deploy`가 성공하면 **Settings → Pages → Visit site**에서 공개 주소를 확인할 수 있습니다.
