@@ -16,6 +16,23 @@ const unwrap=record=>record?.value?.value??record?.value??record;
 const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const compact=value=>JSON.parse(JSON.stringify(value));
 
+// Notion may still carry the former Pages address after the repository transfer.
+// Normalize extracted links and visible URL text without altering the source tree.
+function currentProjectLinks(value) {
+  if(typeof value==="string")return value.replace(/https?:\/\/[^\s<>"\u200b]+/gi,raw=>{
+    try {
+      const url=new URL(raw);
+      if(!["http:","https:"].includes(url.protocol)||url.hostname!=="hlbbusisup-creator.github.io"||
+          url.username||url.password||url.port||
+          !(url.pathname==="/hlb-universe"||url.pathname.startsWith("/hlb-universe/")))return raw;
+      return raw.replace(/^https?:\/\/[^/]+/i,"https://bhb2463-1.github.io");
+    } catch{return raw;}
+  });
+  if(Array.isArray(value))return value.map(currentProjectLinks);
+  if(value&&typeof value==="object")return Object.fromEntries(Object.entries(value).map(([key,item])=>[key,currentProjectLinks(item)]));
+  return value;
+}
+
 export function isPublicAddress(address) {
   if (isIP(address)===4) {
     const [a,b]=address.split(".").map(Number);
@@ -340,7 +357,7 @@ export function extractResources(tree,config) {
   }
   walk(config.rootPageId);
   if(!resources.length)throw new Error("The public source contains no resources");
-  return resources;
+  return currentProjectLinks(resources);
 }
 
 export function extractHeyzinePDF(html,base) {

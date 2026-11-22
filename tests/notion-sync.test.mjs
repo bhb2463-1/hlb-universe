@@ -157,6 +157,48 @@ test("A complete sync installs verified PDFs, reflects additions/removals, and p
   assert.notEqual(changed.contentHash,snapshot.contentHash);
 });
 
+test("Extracted and synchronized links follow the transferred Pages site without changing other destinations",async t=>{
+  const root=await workspace(t),f=fixture();
+  const old="https://hlbbusisup-creator.github.io/hlb-universe";
+  const current="https://bhb2463-1.github.io/hlb-universe";
+  const suffix="/?visit=cafe&note=a%2Fb#counter";
+  f.blocks[id(6)].properties.title=rich("입장하기 "+old+suffix);
+  f.blocks[id(9)].properties.phone=[["온라인 체험관",[["a",old+"?visit=group#desk"]]]];
+  f.blocks[id(10)].properties.vision=rich(old+"/?visit=history#book");
+  f.blocks[id(2)].content.push(id(13),id(14));
+  f.blocks[id(13)]={id:id(13),type:"bookmark",properties:{source:rich(old+"/?visit=cologne#scent")}};
+  const unrelated=[
+    "https://hlbbusisup-creator.github.io/hlb-universe-extra/?visit=cafe",
+    "https://hlbbusisup-creator.github.io/HLB-UNIVERSE/?visit=cafe",
+    "https://hlbbusisup-creator.github.io/other/",
+    "https://hlbbusisup-creator.github.io.example.com/hlb-universe/",
+    "https://other.example/hlb-universe/?next="+old+"/",
+    "https://user@hlbbusisup-creator.github.io/hlb-universe/",
+    "https://hlbbusisup-creator.github.io:8443/hlb-universe/"
+  ];
+  f.blocks[id(14)]={id:id(14),type:"text",properties:{title:rich(unrelated.join("\n"))}};
+  const tree=await crawlNotion(f.config,{request:f.request});
+  const resources=extractResources(tree,f.config);
+  const check=records=>{
+    const product=records.find(record=>record.notionPageId===id(2));
+    assert.ok(product.reading.sections.flatMap(section=>section.items??[]).includes("입장하기 "+current+suffix));
+    assert.deepEqual(product.reading.sections.find(section=>section.heading==="관련 링크").items,[current+"/?visit=cologne#scent"]);
+    const table=records.find(record=>record.notionPageId===id(3)).reading.sections[0];
+    assert.equal(table.cellLinks[1][1][0].url,current+"?visit=group#desk");
+    assert.equal(table.rows[1][1],"온라인 체험관 ("+current+"?visit=group#desk)");
+    assert.equal(records.find(record=>record.notionPageId===id(4)).reading.sections[0].rows[1][1],current+"/?visit=history#book");
+    const content=JSON.stringify(records);
+    for(const url of unrelated)assert.ok(content.includes(url),url+" must remain unchanged");
+  };
+  check(resources);
+  assert.equal(f.blocks[id(6)].properties.title[0][0],"입장하기 "+old+suffix,"Source data remains untouched");
+  const options={root,config:f.config,request:f.request,log:silent};
+  await synchronize(options);
+  const snapshot=JSON.parse(await readFile(path.join(root,f.config.output),"utf8"));
+  check(snapshot.resources);
+  assert.equal((await synchronize(options)).changed,false,"The migrated snapshot remains stable on the next scheduled sync");
+});
+
 test("Incomplete trees, truncated collections and invalid PDF downloads retain the last complete snapshot",async t=>{
   const root=await workspace(t),f=fixture(),options={root,config:f.config,request:f.request,log:silent};
   await synchronize(options);

@@ -25,7 +25,7 @@ npm start
 - **열람** — 실내 열람대 앞에서 E 키나 ‘자료 보기’ 버튼을 누릅니다. 상단 ‘자료 검색’에서도 같은 열람창을 사용할 수 있습니다. ‘자료 목록’으로 돌아가면 검색과 필터가 유지되고, ×를 누르면 그 자리에서 산책을 이어갑니다.
 - **문서와 영상** — 첨부 PDF나 영상이 있는 자료를 선택하면 팝업 안에서 원본을 바로 엽니다. PDF는 전체 페이지를 넘기거나 쪽 번호로 이동하고 확대할 수 있습니다. 첨부가 여러 개면 ‘첨부 자료’에서 선택합니다. ‘자료 내용’에서는 본문과 표를 읽고 검색할 수 있으며, 원본 첨부가 없는 자료는 본문부터 표시합니다. 외부 영상의 자동 재생 여부는 해당 플레이어와 브라우저 설정에 따릅니다.
 - **에데꼬론** — 공간 안내에서 걸어가거나 [상품관 내부에서 시작](http://127.0.0.1:4173/?visit=cologne)할 수 있습니다. 디퓨저나 카트리지 진열대를 클릭하면 캐릭터가 다가가 설명을 엽니다. ‘전시 안내’에서 목적지를 선택하거나 직접 걸어가 E를 눌러도 됩니다.
-- **카페 렌토** — 광장 서쪽에서 흰 거북이와 ‘Café Lento 1975’ 간판을 찾거나 [주문대 앞에서 시작](https://hlbbusisup-creator.github.io/hlb-universe/?visit=cafe)할 수 있습니다. 주문대를 누르거나 앞에서 E를 눌러 커피와 빵을 주문합니다. 두 가지를 함께 들고 다닐 수 있고, ‘커피 마시기’나 ‘빵 먹기’를 누르면 캐릭터가 한입 즐긴 뒤 미소를 짓습니다.
+- **카페 렌토** — 광장 서쪽에서 흰 거북이와 ‘Café Lento 1975’ 간판을 찾거나 [주문대 앞에서 시작](https://bhb2463-1.github.io/hlb-universe/?visit=cafe)할 수 있습니다. 주문대를 누르거나 앞에서 E를 눌러 커피와 빵을 주문합니다. 두 가지를 함께 들고 다닐 수 있고, ‘커피 마시기’나 ‘빵 먹기’를 누르면 캐릭터가 한입 즐긴 뒤 미소를 짓습니다.
 - **연결 범위** — 저장된 팝업 본문과 내려받은 PDF는 로컬 서버만으로 열립니다. 외부 영상과 대화형 사업장 지도는 원 게시자의 플레이어를 팝업 안에 표시하므로 인터넷이 필요합니다. 원본 자료의 업데이트를 확인하고 내려받을 때도 인터넷이 필요합니다.
 
 | 공간 | 열람 자료와 체험 |
@@ -123,11 +123,11 @@ npm test
 
 ## GitHub Pages로 공개하기
 
-1. 프로젝트를 GitHub의 `hlbbusisup-creator/hlb-universe` 저장소의 `main` 브랜치에 올립니다. GitHub Free에서는 공개 저장소를 사용하며, 저장소에 커밋한 소스와 파일도 누구나 볼 수 있습니다.
+1. 프로젝트를 GitHub의 `bhb2463-1/hlb-universe` 저장소의 `main` 브랜치에 올립니다. GitHub Free에서는 공개 저장소를 사용하며, 저장소에 커밋한 소스와 파일도 누구나 볼 수 있습니다.
 2. GitHub 저장소의 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택합니다.
 3. **Actions → Deploy HLB Universe to GitHub Pages → Run workflow**에서 `main`을 선택해 실행합니다. `build`와 `deploy`가 성공하면 **Settings → Pages → Visit site**에서 공개 주소를 확인할 수 있습니다.
 
-배포 후에는 GitHub 로그인 없이 [HLB 유니버스](https://hlbbusisup-creator.github.io/hlb-universe/)와 [에데꼬론 상품관](https://hlbbusisup-creator.github.io/hlb-universe/?visit=cologne)에 접속할 수 있습니다.
+배포 후에는 GitHub 로그인 없이 [HLB 유니버스](https://bhb2463-1.github.io/hlb-universe/)와 [에데꼬론 상품관](https://bhb2463-1.github.io/hlb-universe/?visit=cologne)에 접속할 수 있습니다.
 
 도움말의 버전과 변경 사항은 `src/release-info.js`에서 관리합니다. 버전을 올릴 때는 `package.json`도 같은 번호로 변경하세요. 공개 파일에 기록된 `release.json`의 버전과 커밋을 배포 직후 실제 사이트에서 대조합니다. 버전 또는 커밋이 다르면 다음 정기 실행에서도 재배포를 시도합니다.
 
